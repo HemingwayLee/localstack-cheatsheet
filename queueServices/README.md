@@ -9,3 +9,6 @@
 * It is a managed message broker service that provides compatibility with many popular message brokers (e.g., JMS or protocols such as AMQP, MQTT, OpenWire, and STOMP)
 * When: doing migration
 
+# Reference
+https://stackoverflow.com/questions/13681213/what-is-the-difference-between-amazon-sns-and-amazon-sqs  
+
