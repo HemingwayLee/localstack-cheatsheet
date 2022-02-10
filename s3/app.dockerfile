@@ -1,5 +1,7 @@
 FROM python:3.8
 
+RUN apt-get update && apt-get install -y awscli curl vim jq
+
 RUN mkdir -p /home/app
 WORKDIR /home/app
 COPY . /home/app
