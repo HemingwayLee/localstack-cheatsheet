@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  myminio:
+    image: minio/minio
+    container_name: myminio
+    volumes:
+      - ./data/:/data/
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    command: minio server /data --console-address 0.0.0.0:9001
+  app:
+    build:
+      context: .
+      dockerfile: app.dockerfile
+    # command: /home/app/runner.sh
+    command: /home/app/init.sh
+    environment:
+      PYTHONUNBUFFERED: 1
+      ADDRESS: "myminio"
+      API_PORT: "9000"
+      WEB_PORT: "9001"
+    depends_on:
+      - myminio
+
