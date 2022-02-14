@@ -1,11 +1,15 @@
-# How 
-## main tab
+# How to run 
+## Run by docker
+* In main tab
 ```
-localstack start
+docker-compose build
+docker-compose up
 ```
 
-## In another tab
+* In another tab
 ```
+docker exec -it ${ID} /bin/bash
 ./runner.sh
+python3 hello.py
 ```
 
