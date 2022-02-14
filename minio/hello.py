@@ -1,7 +1,8 @@
 import os
 import boto3
 
-ADDRESS = os.getenv('ADDRESS_PORT', 'localstack:4566')
+ADDRESS = os.getenv('ADDRESS', 'minio')
+PORT = os.getenv('API_PORT', '9000')
 ACCESS_ID = os.getenv('AWS_ACCESS_KEY_ID', 'id')
 SECRET_KEY = os.getenv('AWS_SECRET_ACCESS_KEY', 'secret')
 
@@ -15,7 +16,7 @@ my_session = boto3.Session(
 
 s3 = my_session.resource(
     service_name = 's3',
-    endpoint_url=f"http://{ADDRESS}",
+    endpoint_url=f"http://{ADDRESS}:{API_PORT}",
     region_name='us-west-2')
 
 my_bucket = s3.create_bucket(Bucket='mybucket')
