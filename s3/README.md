@@ -25,3 +25,11 @@ docker exec -it ${ID} /bin/bash
 python3 hello.py
 ```
 
+## aws cli
+```
+aws configure
+AWS Access Key ID [****************2S7Q]: 
+AWS Secret Access Key [****************uDF5]: 
+Default region name [None]: 
+Default output format [None]: 
+```
